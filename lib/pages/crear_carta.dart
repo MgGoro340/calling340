@@ -197,14 +197,15 @@ class _CrearCartaState extends State<CrearCarta> {
     //print(DateFormat('dd/MM/yyyy').format(DateTime.parse(fecha)));
     CalculoCarta _calculo = CalculoCarta();
     carta = _calculo.calcularCarta(fecha, nombre);
+     
     _submit();
-    mostrarSnackbar(context, 'Carta creada!!!!');
+  
   }
 
   void _submit() async {
     // print(' en _submit() ');
-    cartasBloc.agregarCarta(carta);
-
+   cartasBloc.agregarCarta(carta);
+   mostrarSnackbar(context, 'Carta creada!!!!');
     Navigator.pop(context);
   }
 

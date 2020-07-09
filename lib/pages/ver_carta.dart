@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:numerologia001/bloc/provider.dart';
 import 'package:numerologia001/models/carta_model.dart';
+import 'package:photo_view/photo_view.dart';
+
 
 class VerCarta extends StatefulWidget {
   const VerCarta({Key key}) : super(key: key);
@@ -36,11 +38,11 @@ class _VerCartaState extends State<VerCarta> {
       appBar: AppBar(
         title: crearTituloAppBar(),
       ),
-     floatingActionButton: FloatingActionButton.extended(
-            label: Text('Volver'),
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_left),
-            backgroundColor: Colors.deepPurple),
+      //  floatingActionButton: FloatingActionButton.extended(
+      //         label: Text('Volver'),
+      //         onPressed: () => Navigator.pop(context),
+      //         icon: Icon(Icons.arrow_left),
+      //         backgroundColor: Colors.deepPurple),
       body: // ListView(
           //padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           Container(
@@ -50,19 +52,21 @@ class _VerCartaState extends State<VerCarta> {
             //mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               ListTile(
-                leading: Icon(Icons.card_membership, color:Colors.deepPurple),
+                leading: Icon(Icons.card_membership, color: Colors.deepPurple),
                 title: nombrePersona(),
                 subtitle: fechaPersona(),
               ),
+              Divider(),
               Wrap(
+                spacing: 10.0,
                 children: <Widget>[
-                  mostrarEntidad('${carta.caminoVida}'  , 'Camino de vida '),
-                  mostrarEntidad('${carta.nacimiento}'  , 'Nacimiento '),
-                  mostrarEntidad('${carta.caminoAlma}'  , 'Camino de alma '),
-                  mostrarEntidad('${carta.personalidad}', 'Personalidad '),
-                  mostrarEntidad('${carta.temperamento}', 'Temperamento '),
-                  mostrarEntidad('${carta.mision}'      , 'Mision '),
-                  mostrarEntidad('${carta.metaFinal}'   , 'Meta Final '),
+                  buildCard('${carta.caminoVida}', '  Camino de vida '),
+                  buildCard('${carta.nacimiento}', '   Nacimiento    '),
+                  buildCard('${carta.caminoAlma}', '  Camino de alma '),
+                  buildCard('${carta.personalidad}', '  Personalidad   '),
+                  buildCard('${carta.temperamento}', '   Temperamento  '),
+                  buildCard('${carta.mision}', '      Mision     '),
+                  buildCard('${carta.metaFinal}', '    Meta Final   '),
                 ],
               ),
               Expanded(
@@ -72,11 +76,41 @@ class _VerCartaState extends State<VerCarta> {
                     //color: Colors.amberAccent,
                     child: generarListaImagens()),
               ),
-             
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget buildCard(String valor, String texto) {
+    return GestureDetector(
+          onTap: () {
+             mostrarImagen(valor, texto);
+                    },
+          child: Card(
+          //color: Colors.green,
+          child: Column(
+        children: <Widget>[
+          Text(
+            '$texto',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                color: Colors.deepPurple),
+          ),
+          Container(
+            //salignment: Alignment.centerRight,
+            child: Text(
+              '$valor',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 50,
+                  color: Colors.deepPurple),
+            ),
+          ),
+        ],
+      )),
     );
   }
 
@@ -85,19 +119,19 @@ class _VerCartaState extends State<VerCarta> {
       padding: EdgeInsets.all(5.0),
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        buildExpandedImagenes('${carta.caminoVida}'   ,'Camino de vida '),
-        buildExpandedImagenes('${carta.nacimiento}'   ,'Nacimiento '),
-        buildExpandedImagenes('${carta.caminoAlma}'   ,'Camino de alma '),
-        buildExpandedImagenes('${carta.personalidad}' ,'Personalidad '),
-        buildExpandedImagenes('${carta.temperamento}' ,'Temperamento '),
-        buildExpandedImagenes('${carta.mision}'       , 'Mision '),
-        buildExpandedImagenes('${carta.metaFinal}'    , 'Meta Final '),
-       // buildExpandedImagenes('7'),
+        buildExpandedImagenes('${carta.caminoVida}', 'Camino de vida '),
+        buildExpandedImagenes('${carta.nacimiento}', 'Nacimiento '),
+        buildExpandedImagenes('${carta.caminoAlma}', 'Camino de alma '),
+        buildExpandedImagenes('${carta.personalidad}', 'Personalidad '),
+        buildExpandedImagenes('${carta.temperamento}', 'Temperamento '),
+        buildExpandedImagenes('${carta.mision}', 'Mision '),
+        buildExpandedImagenes('${carta.metaFinal}', 'Meta Final '),
+        // buildExpandedImagenes('7'),
       ],
     );
   }
 
-  Widget buildExpandedImagenes(String valor, String dimension ) {
+  Widget buildExpandedImagenes(String valor, String dimension) {
     final _miCard = Expanded(
       child: Container(
         margin: EdgeInsets.all(1.0),
@@ -107,42 +141,93 @@ class _VerCartaState extends State<VerCarta> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(40.0),
-                child: FadeInImage(
-                  image: AssetImage('lib/assets/Tarot$valor.jpg'),
-                  placeholder: AssetImage('lib/assets/loading.gif'),
-                  fadeInDuration: Duration(milliseconds: 450),
+              child: Hero(
+                 tag: valor + dimension,
+                  child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      mostrarImagen(valor, dimension);
+                    },
+                    child: FadeInImage(
+                      image: AssetImage('lib/assets/Tarot$valor.jpg'),
+                      placeholder: AssetImage('lib/assets/loading.gif'),
+                      fadeInDuration: Duration(milliseconds: 450),
 
-                  ///height: 150.0,
-                  fit: BoxFit.cover,
+                      ///height: 150.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 5.0),
+              margin: EdgeInsets.symmetric(horizontal: 2.0),
               padding: EdgeInsets.symmetric(horizontal: 10.0),
               decoration: BoxDecoration(
-                color: Colors.deepPurple[200],
-                borderRadius: BorderRadius.circular(40.0),
-              
+                color: Colors.deepPurple[800],
+                borderRadius: BorderRadius.circular(2.0),
               ),
-              child: Text(
-                '$dimension  $valor',
-                overflow: TextOverflow.ellipsis,
-                 style: TextStyle(
-                   fontWeight: FontWeight.bold, 
-                   fontSize: 18,
-                   color: Colors.deepPurple)
-              ),
-             )
-             
+              child: Text('$dimension  $valor',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.white)),
+            )
           ],
         ),
       ),
     );
 
     return _miCard;
+  }
+
+  void mostrarImagen(String valor, String dimension) {
+    showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20.0))
+                ),
+            title: Text(
+              '$dimension - $valor',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.deepPurple),
+            ),
+            content: Hero(
+                tag: valor + dimension,
+                child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: 
+                  FadeInImage(
+                    image: AssetImage('lib/assets/Tarot$valor.jpg'),
+                    placeholder: AssetImage('lib/assets/loading.gif'),
+                    fadeInDuration: Duration(milliseconds: 450),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ),
+            actions: [
+              Container(
+                margin: EdgeInsets.all(20),
+                child: FlatButton(
+                  child: Text('volver'),
+                  color: Colors.deepPurple,
+                  textColor: Colors.white,
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ),
+            ],
+          );
+        });
   }
 
   Chip mostrarEntidad(String valor, String texto) {
@@ -159,16 +244,21 @@ class _VerCartaState extends State<VerCarta> {
     );
   }
 
-
-   Widget nombrePersona() {
-     return Text('${carta.nombre}',
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18));
-   }
+  Widget nombrePersona() {
+    return Text(
+      '${carta.nombre}',
+      style: TextStyle(
+          fontWeight: FontWeight.bold, fontSize: 25, color: Colors.deepPurple),
+    );
+  }
 
   Widget fechaPersona() {
     return Text(
         '${carta.fechaNacimiento}  -  ${carta.caminoVida} en ${carta.nacimiento}',
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12));
+        style: TextStyle(
+            // fontWeight: FontWeight.bold,
+            fontSize: 12,
+            color: Colors.deepPurple[600]));
   }
 
   Widget crearTituloAppBar() {
