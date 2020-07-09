@@ -17,7 +17,7 @@ class _VerCartaState extends State<VerCarta> {
   CartaModel carta = new CartaModel();
   //bool _guardando = false;
 
-  TextEditingController _fechaEditingController = new TextEditingController();
+  //TextEditingController _fechaEditingController = new TextEditingController();
   String _fecha = '';
   //String _nombre = '';
 
@@ -36,12 +36,11 @@ class _VerCartaState extends State<VerCarta> {
       appBar: AppBar(
         title: crearTituloAppBar(),
       ),
-      floatingActionButton: 
-        FloatingActionButton(
-          onPressed: () => Navigator.pop(context),
-          child: Icon(Icons.arrow_back),
-          backgroundColor: Colors.deepPurple
-          ),
+     floatingActionButton: FloatingActionButton.extended(
+            label: Text('Volver'),
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_left),
+            backgroundColor: Colors.deepPurple),
       body: // ListView(
           //padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
           Container(

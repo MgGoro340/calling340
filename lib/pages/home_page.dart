@@ -11,9 +11,10 @@ class HomePage extends StatelessWidget {
     cartasBloc.cargarCartas();
 
     return new Scaffold(
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton.extended(
+            label: Text('Agregar Carta'),
             onPressed: () => _crearCarta(context),
-            child: Icon(Icons.add),
+            icon: Icon(Icons.add),
             backgroundColor: Colors.deepPurple),
         appBar: AppBar(
           title: Text("Cartas Numerologicas"),
