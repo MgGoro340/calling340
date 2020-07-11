@@ -49,7 +49,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/marti
 	android:label
 		ADDED from /home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/AndroidManifest.xml:10:9-39
 	android:icon
-		ADDED from /home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/AndroidManifest.xml:11:9-45
 	android:name
 		ADDED from /home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/AndroidManifest.xml:9:9-57
 activity#com.example.numerologia001.MainActivity

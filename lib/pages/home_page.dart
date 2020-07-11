@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
             backgroundColor: Colors.deepPurple),
         appBar: AppBar(
           title: Text("Cartas Numerologicas"),
+          automaticallyImplyLeading: false,
         ),
         //onPressed: () {   print('Hola mundo');       },
         //child: Icon(Icons.add)),

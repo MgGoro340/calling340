@@ -22,23 +22,20 @@ class CalculoCarta {
   CartaModel calcularCarta(String fechaNacimiento, String nombre) {
     CartaModel _cartaCalculada = new CartaModel();
 
-    _cartaCalculada.nombre          = nombre;
+    _cartaCalculada.nombre = nombre;
     _cartaCalculada.fechaNacimiento = fechaNacimiento;
     _cartaCalculada.sumatoriaConsonante = _calcularSumatoriaConsonantes(nombre);
-    _cartaCalculada.nacimiento     = _calcularDiaNacimiento(fechaNacimiento);
+    _cartaCalculada.nacimiento = _calcularDiaNacimiento(fechaNacimiento);
     _cartaCalculada.sumatoriaVocal = _calcularSumatoriaVocales(nombre);
-    _cartaCalculada.caminoVida     = _calcularNacimiento(fechaNacimiento);
-    _cartaCalculada.caminoAlma     = _cartaCalculada.sumatoriaVocal;
-    _cartaCalculada.personalidad   = _cartaCalculada.sumatoriaConsonante;
-    _cartaCalculada.temperamento   = _calcularEntidad(
-                                            _cartaCalculada.caminoAlma,
-                                             _cartaCalculada.personalidad);
-    _cartaCalculada.mision         = _calcularEntidad(
-                                             _calcularSumatoriaIniciales(nombre),
-                                              _cartaCalculada.caminoVida);
-    _cartaCalculada.metaFinal      = _calcularEntidad(
-                                          _cartaCalculada.temperamento,
-                                           _cartaCalculada.caminoVida);
+    _cartaCalculada.caminoVida = _calcularNacimiento(fechaNacimiento);
+    _cartaCalculada.caminoAlma = _cartaCalculada.sumatoriaVocal;
+    _cartaCalculada.personalidad = _cartaCalculada.sumatoriaConsonante;
+    _cartaCalculada.temperamento = _calcularEntidad(
+        _cartaCalculada.caminoAlma, _cartaCalculada.personalidad);
+    _cartaCalculada.mision = _calcularEntidad(
+        _calcularSumatoriaIniciales(nombre), _cartaCalculada.caminoVida);
+    _cartaCalculada.metaFinal = _calcularEntidad(
+        _cartaCalculada.temperamento, _cartaCalculada.caminoVida);
 
     return _cartaCalculada;
   }
@@ -162,9 +159,11 @@ class CalculoCarta {
     int tmp = 0;
     for (var i = 0; i < nombreTmp.length; i++) {
       index = nombreTmp.substring(i, i + 1);
-      if (index != ' ' && !_esConsonanteDesdeLetra(index)) {
-        //print(index  + ' - ' + obtenerNumeroDesdeLetra(index) );
-        tmp = tmp + int.parse(_obtenerNumeroDesdeLetra(index));
+      if (index != "'") {
+        if (index != ' ' && !_esConsonanteDesdeLetra(index)) {
+          //print(index  + ' - ' + obtenerNumeroDesdeLetra(index) );
+          tmp = tmp + int.parse(_obtenerNumeroDesdeLetra(index));
+        }
       }
     }
     while (tmp.toString().length > 1) {
@@ -202,7 +201,7 @@ class CalculoCarta {
   }
 
   bool _esConsonanteDesdeLetra(String letra) {
-    String _vocales = 'aáäeéëiíïoóöuúü';
+    String _vocales = 'aáäeéëiíïoóöuúüy';
 
     return _vocales.contains(letra) ? false : true;
   }
@@ -250,6 +249,11 @@ class CalculoCarta {
         }
         break;
       case 'c':
+        {
+          return '3';
+        }
+        break;
+      case 'Ç':
         {
           return '3';
         }

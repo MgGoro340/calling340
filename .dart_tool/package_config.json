@@ -68,6 +68,12 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///home/marting/Descargas/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "flutter_localizations",
       "rootUri": "file:///home/marting/Descargas/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
@@ -320,13 +326,19 @@
       "languageVersion": "2.6"
     },
     {
+      "name": "yaml",
+      "rootUri": "file:///home/marting/Descargas/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
       "name": "numerologia001",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-07-09T21:15:55.433086Z",
+  "generated": "2020-07-11T03:01:31.113077Z",
   "generator": "pub",
   "generatorVersion": "2.8.4"
 }

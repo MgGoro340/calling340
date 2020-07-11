@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:numerologia001/pages/splash.dart';
 import 'bloc/provider.dart';
 import 'pages/home_page.dart';
 import 'routes/routes.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider(
       child: MaterialApp(
-          title: 'Numerologia 001',
+          title: 'Numerologia 3400',
           initialRoute: '/',
           routes: getAplicattionRoutes(),
           theme: ThemeData(
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
             ],
             onGenerateRoute: (RouteSettings settings) {
             return MaterialPageRoute(
-                builder: (BuildContext context) => HomePage());
+                //builder: (BuildContext context) => HomePage());
+                builder: (BuildContext context) => SplashScreen());
           }),
     );
   }

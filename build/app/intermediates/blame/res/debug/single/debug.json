@@ -1,19 +1,23 @@
 [
     {
-        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-xxhdpi/launcher_icon.png"
     },
     {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
@@ -24,16 +28,24 @@
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/layout-v16/notification_template_custom_big.xml"
     },
     {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-hdpi_launcher_icon.png.flat",
+        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-hdpi/launcher_icon.png"
+    },
+    {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-mdpi_launcher_icon.png.flat",
+        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-mdpi/launcher_icon.png"
+    },
+    {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
-        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
-        "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/layout/notification_template_icon_group.xml"
-    },
-    {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/layout/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
@@ -56,6 +68,10 @@
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
     },
     {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-xhdpi/launcher_icon.png"
+    },
+    {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
@@ -66,6 +82,10 @@
     {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
         "source": "/home/marting/.gradle/caches/transforms-2/files-2.1/a528b13ac93e64cafa3d0480e2c93207/core-1.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
     {
         "merged": "/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
