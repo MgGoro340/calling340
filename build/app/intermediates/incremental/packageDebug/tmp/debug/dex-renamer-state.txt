@@ -1,4 +1,4 @@
-#Sat Jul 11 01:27:36 ART 2020
+#Sun Jul 12 22:16:12 ART 2020
 base.0=/home/marting/Escritorio/flutterProjectVSCode/numerologia001/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:numerologia001/pages/splash.dart';
+import 'package:numerologia001/preferencias_usuario/preferencias_usuario.dart';
 import 'bloc/provider.dart';
-import 'pages/home_page.dart';
 import 'routes/routes.dart';
 
 void main() => runApp(MyApp());
@@ -10,9 +10,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final prefs = new PreferenciasUsuario();
+    prefs.initPrefs();
     return Provider(
       child: MaterialApp(
-          title: 'Numerologia 3400',
+          title: 'Numerologia 340',
+          debugShowCheckedModeBanner: false,
           initialRoute: '/',
           routes: getAplicattionRoutes(),
           theme: ThemeData(

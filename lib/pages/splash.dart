@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:numerologia001/pages/ayuda_page.dart';
 import 'package:numerologia001/pages/home_page.dart';
+import 'package:numerologia001/preferencias_usuario/preferencias_usuario.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key key}) : super(key: key);
@@ -38,7 +40,19 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(Duration(seconds: 5), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()) );
+      final prefs = new PreferenciasUsuario();
+      prefs.initPrefs();
+
+      var _mostrarAyuda = prefs.mostrarAyuda;
+
+      if (_mostrarAyuda == 'si') {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AyudaCarta()));
+      } else {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+      }
+
       //print('llamo a home page');
     });
   }
@@ -46,10 +60,9 @@ class _SplashScreenState extends State<SplashScreen> {
   animarCirculo() {
     setState(() {
       _opacity = _opacity == 0.0 ? 1.0 : 0.0;
-     _widthCircle = 1000.0;
-    _heigthCircle = 1000.0;
+      _widthCircle = 1000.0;
+      _heigthCircle = 1000.0;
     });
-
   }
 
   animarTarjeta() {
@@ -102,42 +115,40 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
           ),
-           Align(
+          Align(
             alignment: Alignment.center,
-            child:
-            AnimatedContainer(
-                    alignment: Alignment.center,
-                    duration: Duration(seconds: 1),
-                    child: Text(
-                      '340',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 50,
-                          color: Colors.deepPurple),
-                    ),
-                    width: _widthCircle,
-                    height: _heigthCircle,
-                    decoration: BoxDecoration(
-                     color: Colors.white,
-                     shape: BoxShape.circle,
-                    //borderRadius: BorderRadius.circular(5.0),
+            child: AnimatedContainer(
+              alignment: Alignment.center,
+              duration: Duration(seconds: 1),
+              child: Text(
+                '340',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 50,
+                    color: Colors.deepPurple),
+              ),
+              width: _widthCircle,
+              height: _heigthCircle,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                //borderRadius: BorderRadius.circular(5.0),
               ),
             ),
-            ),
-          Align(
-             alignment:FractionalOffset(0.5, 0.8),
-            child:
-          AnimatedOpacity(
-            opacity: _opacity,
-            duration: Duration(seconds:3),
-            child: Text(
-              'Cartas Numerologicas',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.white),
-            ),
           ),
+          Align(
+            alignment: FractionalOffset(0.5, 0.85),
+            child: AnimatedOpacity(
+              opacity: _opacity,
+              duration: Duration(seconds: 3),
+              child: Text(
+                'Cartas Numerologicas',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
+              ),
+            ),
           ),
         ]),
       ),

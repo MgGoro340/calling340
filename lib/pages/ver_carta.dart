@@ -219,9 +219,13 @@ class _VerCartaState extends State<VerCarta> {
               Container(
                 margin: EdgeInsets.all(20),
                 child: FlatButton(
-                  child: Text('volver'),
+                  child: Text('   volver   '),
                   color: Colors.deepPurple,
                   textColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40.0),
+                    //side: BorderSide(color: Colors.red)
+                  ),
                   onPressed: () => Navigator.of(context).pop(),
                 ),
               ),
