@@ -208,6 +208,7 @@ class HomePage extends StatelessWidget {
     //print('Hola mundo');
   }
 
+
   Widget _crearListado(CartasBloc cartasBloc) {
     print(' _crearListado en el stream builder ');
     return StreamBuilder(

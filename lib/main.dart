@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:numerologia001/pages/splash.dart';
 import 'package:numerologia001/preferencias_usuario/preferencias_usuario.dart';
-import 'bloc/provider.dart';
+import 'package:numerologia001/bloc/provider.dart';
 import 'routes/routes.dart';
 
 void main() => runApp(MyApp());
